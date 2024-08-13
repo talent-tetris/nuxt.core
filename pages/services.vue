@@ -5,7 +5,9 @@
 <template>
   <app-application-bar>
     <template #left>
-      <UAvatar size="md" icon="i-ph-user-bold" class="bg-gray-100"/>
+      <nuxt-link to="/profile">
+        <u-avatar size="md" icon="i-ph-user-bold" class="bg-gray-100"/>
+      </nuxt-link>
       <div class="text-lg font-bold">Сервисы</div>
     </template>
     <template #right>

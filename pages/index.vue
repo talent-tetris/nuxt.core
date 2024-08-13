@@ -5,7 +5,9 @@ const auth = useAuthStore();
 <template>
   <app-application-bar :is-sticky="false">
     <template #left>
-      <UAvatar size="md" icon="i-ph-user-bold" class="bg-gray-100"/>
+      <nuxt-link to="/profile">
+        <u-avatar size="md" icon="i-ph-user-bold" class="bg-gray-100"/>
+      </nuxt-link>
       <div class="text-lg font-bold">Главная</div>
     </template>
     <template #right>
@@ -15,15 +17,6 @@ const auth = useAuthStore();
     </template>
   </app-application-bar>
   <div class="space-y-2 p-2 max-w-3xl mx-auto">
-    <div class="flex items-center p-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
-      <u-avatar icon="i-ph-user-bold" class="bg-pink-300 text-3xl" size="lg"/>
-      <div class="flex-1 min-w-0 ml-2">
-        <div class="font-semibold truncate">{{ auth.user.name }}</div>
-        <div class="text-gray-400 text-sm font-normal truncate">
-          {{ auth.user.email }}
-        </div>
-      </div>
-    </div>
     <news-list/>
     <div class="h-48 rounded-xl bg-red-200/50"></div>
     <div class="h-48 rounded-xl bg-red-200/50"></div>
