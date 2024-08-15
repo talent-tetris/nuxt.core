@@ -22,6 +22,7 @@ export default defineNuxtPlugin({
         ...headers,
         ...{
           'Accept': 'application/json',
+          'Accept-Language': 'ru',
         },
         ...(
           import.meta.server ? {

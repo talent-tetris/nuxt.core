@@ -1,13 +1,11 @@
 <script setup>
-const auth = useAuthStore();
+
 </script>
 
 <template>
   <app-application-bar :is-sticky="false">
     <template #left>
-      <nuxt-link to="/profile">
-        <u-avatar size="md" icon="i-ph-user-bold" class="bg-gray-100"/>
-      </nuxt-link>
+      <u-avatar size="md" icon="i-ph-user-bold" class="bg-gray-100"/>
       <div class="text-lg font-bold">Главная</div>
     </template>
     <template #right>

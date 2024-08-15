@@ -22,9 +22,8 @@ const {refresh: onSubmit, status: loginStatus} = useFetch<any>("login", {
   async onResponse({response}) {
     if (response?.status === 422) {
       form.value.setErrors(response._data?.errors);
-    } else if (response._data?.ok) {
+    } else if (response._data?.status) {
       auth.token = response._data.token;
-      console.log(response._data.token);
       await auth.fetchUser();
       await router.push("/");
     }
@@ -40,7 +39,6 @@ async function handleMessage(event: { data: any }): Promise<void> {
     });
   }
 }
-
 
 onMounted(() => window.addEventListener("message", handleMessage));
 onBeforeUnmount(() => window.removeEventListener("message", handleMessage));

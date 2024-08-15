@@ -39,7 +39,7 @@ export const useAuthStore = defineStore('auth', () => {
     }
   })
 
-  const {refresh: fetchUser} = useFetch<any>('user', {
+  const {refresh: fetchUser} = useFetch<any>('me', {
     immediate: false,
     onResponse({response}) {
       if (response.status === 200) {

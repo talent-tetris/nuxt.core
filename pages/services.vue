@@ -5,9 +5,7 @@
 <template>
   <app-application-bar>
     <template #left>
-      <nuxt-link to="/profile">
-        <u-avatar size="md" icon="i-ph-user-bold" class="bg-gray-100"/>
-      </nuxt-link>
+      <u-avatar size="md" icon="i-ph-user-bold" class="bg-gray-100"/>
       <div class="text-lg font-bold">Сервисы</div>
     </template>
     <template #right>
@@ -18,7 +16,8 @@
   <div class="space-y-2 p-2 max-w-3xl mx-auto">
     <div class="bg-white dark:bg-gray-900 rounded-xl">
       <div class="grid grid-cols-4 gap-4 p-2">
-        <div class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
+        <div
+          class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
           <div class="p-2 rounded-xl bg-red-200/90">
             <u-icon name="i-ph-users" class=" h-12 w-12 line-clamp-none text-red-500"/>
           </div>
@@ -45,13 +44,15 @@
           </div>
           <div class="text-center text-sm  font-medium tracking-tight line-clamp-2">Зобота о сотруднике</div>
         </div>
-        <div class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
+        <div
+          class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
           <div class="p-2 rounded-xl bg-blue-100">
             <u-icon name="i-ph-gear" class=" h-12 w-12 line-clamp-none text-blue-500"/>
           </div>
           <div class="text-center text-sm font-medium tracking-tight line-clamp-2">Service Desk</div>
         </div>
-        <div class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
+        <div
+          class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
           <div class="p-2 rounded-xl bg-orange-100">
             <u-icon name="i-ph-users-four" class=" h-12 w-12 line-clamp-none text-orange-500"/>
           </div>

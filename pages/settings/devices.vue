@@ -20,7 +20,7 @@ const menu = (row: any) => [
             hash: row.hash,
           },
           async onResponse({response}) {
-            if (response._data?.ok) {
+            if (response._data?.status) {
               await refresh();
               await auth.fetchUser();
             }
@@ -48,20 +48,21 @@ const menu = (row: any) => [
   <div class="max-w-3xl mx-auto space-y-2 p-2">
     <div class="bg-white dark:bg-gray-900 rounded-md">
       <div class="px-3.5 py-2 font-semibold">Это устройство</div>
-      <div v-for="device in data?.devices" class="px-2 pb-2">
-        <div v-if="device.is_current"
-             class="flex items-center p-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">
-          <u-avatar icon="i-ph-devices" class="bg-primary-300 text-3xl" size="lg"/>
-          <div class="flex-1 min-w-0 ml-2">
-            <div class="font-semibold truncate">
-              {{ device.name }}
-            </div>
-            <div class="text-gray-400 text-sm font-normal truncate">
-              {{ device.ip }} : <span class="text-primary-500">{{ dayjs(device.last_used_at).fromNow() }}</span>
+      <template v-for="device in data?.devices">
+        <div class="px-2 pb-2" v-if="device.is_current">
+          <div class="flex items-center p-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">
+            <u-avatar icon="i-ph-devices" class="bg-primary-300 text-3xl" size="lg"/>
+            <div class="flex-1 min-w-0 ml-2">
+              <div class="font-semibold truncate">
+                {{ device.name }}
+              </div>
+              <div class="text-gray-400 text-sm font-normal truncate">
+                {{ device.ip }} : <span class="text-primary-500">{{ dayjs(device.last_used_at).fromNow() }}</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </template>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-md">
       <div class="px-3.5 py-2 font-semibold">Активные сеансы</div>
