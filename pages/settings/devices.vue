@@ -1,12 +1,16 @@
 <script setup lang="ts">
+import {useDevicesStore} from "~/stores/devices";
+
 definePageMeta({
   layout: 'guest'
 });
 
-const auth = useAuthStore();
 const dayjs = useDayjs();
-const {data, status, refresh} = useFetch<any>("devices");
-const loading = computed(() => status.value === 'pending');
+
+const devices = useDevicesStore();
+onMounted(() => {
+  devices.getDevices()
+})
 
 const menu = (row: any) => [
   [
@@ -21,8 +25,7 @@ const menu = (row: any) => [
           },
           async onResponse({response}) {
             if (response._data?.status) {
-              await refresh();
-              await auth.fetchUser();
+              devices.getDevices()
             }
           }
         });
@@ -40,15 +43,15 @@ const menu = (row: any) => [
       <div class="text-lg font-bold">Устройства</div>
     </template>
     <template #right>
-      <u-button :loading="loading" size="lg" color="gray" variant="ghost" icon="i-ph-arrow-clockwise-bold"
-                @click="refresh"/>
+      <u-button size="lg" color="gray" variant="ghost" icon="i-ph-arrow-clockwise-bold"
+                @click="devices.getDevices()"/>
     </template>
   </app-application-bar>
 
   <div class="max-w-3xl mx-auto space-y-2 p-2">
     <div class="bg-white dark:bg-gray-900 rounded-md">
       <div class="px-3.5 py-2 font-semibold">Это устройство</div>
-      <template v-for="device in data?.devices">
+      <template v-for="device in devices?.devices">
         <div class="px-2 pb-2" v-if="device.is_current">
           <div class="flex items-center p-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">
             <u-avatar icon="i-ph-devices" class="bg-primary-300 text-3xl" size="lg"/>
@@ -66,7 +69,7 @@ const menu = (row: any) => [
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-md">
       <div class="px-3.5 py-2 font-semibold">Активные сеансы</div>
-      <div v-for="device in data?.devices" class="px-2 pb-2">
+      <div v-for="device in devices?.devices" class="px-2 pb-2">
 
         <UDropdown :items="menu(device)" :ui="{ wrapper: 'flex' }">
           <div class="w-full flex items-center p-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">
