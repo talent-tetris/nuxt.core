@@ -26,7 +26,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBase: 'http://127.0.0.1:8000',
+      apiBase: 'https://dev-employee.buhe.su',
       apiPrefix: '/api',
     },
   },
