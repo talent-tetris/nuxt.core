@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import {useDevicesStore} from "~/stores/devices";
-
 definePageMeta({
   layout: 'guest'
 });

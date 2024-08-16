@@ -14,14 +14,6 @@
   </app-application-bar>
   <div class="space-y-2 p-2 max-w-3xl mx-auto">
     <news-list/>
-    <div class="h-48 rounded-xl bg-red-200/50"></div>
-    <div class="h-48 rounded-xl bg-red-200/50"></div>
-    <div class="h-48 rounded-xl bg-red-200/50"></div>
-    <div class="h-48 rounded-xl bg-red-200/50"></div>
-    <div class="h-48 rounded-xl bg-red-200/50"></div>
-    <div class="h-48 rounded-xl bg-red-200/50"></div>
-    <div class="h-48 rounded-xl bg-red-200/50"></div>
-    <div class="h-48 rounded-xl bg-red-200/50"></div>
   </div>
 </template>
 
