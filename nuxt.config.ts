@@ -26,7 +26,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBase: 'https://dev-employee.buhe.su',
+      apiBase:  process.env.BASE_URL || 'https://dev-employee.buhe.su',
       apiPrefix: '/api',
     },
   },

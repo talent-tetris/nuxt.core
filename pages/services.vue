@@ -9,55 +9,19 @@
       <div class="text-lg font-bold">Сервисы</div>
     </template>
     <template #right>
-      <u-button size="lg" color="gray" variant="ghost" icon="i-ph-magnifying-glass-bold"/>
       <u-button size="lg" color="gray" variant="ghost" icon="i-ph-list-bold" to="settings"/>
     </template>
   </app-application-bar>
   <div class="space-y-2 p-2 max-w-3xl mx-auto">
     <div class="bg-white dark:bg-gray-900 rounded-xl">
       <div class="grid grid-cols-4 gap-4 p-2">
-        <div
+        <nuxt-link to="contacts"
           class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
           <div class="p-2 rounded-xl bg-red-200/90">
             <u-icon name="i-ph-users" class=" h-12 w-12 line-clamp-none text-red-500"/>
           </div>
           <div class="text-center text-sm font-medium tracking-tight line-clamp-2">Контакты</div>
-        </div>
-        <div
-          class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
-          <div class="p-2 rounded-xl bg-purple-200/90">
-            <u-icon name="i-ph-crosshair" class=" h-12 w-12 line-clamp-none text-purple-500"/>
-          </div>
-          <div class="text-center text-sm font-medium tracking-tight line-clamp-2">KPI</div>
-        </div>
-        <div
-          class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
-          <div class="p-2 rounded-xl bg-amber-100">
-            <u-icon name="i-ph-books" class=" h-12 w-12 line-clamp-none text-amber-500"/>
-          </div>
-          <div class="text-center text-sm font-medium tracking-tight line-clamp-2">Библиотека</div>
-        </div>
-        <div
-          class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
-          <div class="p-2 rounded-xl bg-green-100">
-            <u-icon name="i-ph-users" class=" h-12 w-12 line-clamp-none text-green-500"/>
-          </div>
-          <div class="text-center text-sm  font-medium tracking-tight line-clamp-2">Зобота о сотруднике</div>
-        </div>
-        <div
-          class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
-          <div class="p-2 rounded-xl bg-blue-100">
-            <u-icon name="i-ph-gear" class=" h-12 w-12 line-clamp-none text-blue-500"/>
-          </div>
-          <div class="text-center text-sm font-medium tracking-tight line-clamp-2">Service Desk</div>
-        </div>
-        <div
-          class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
-          <div class="p-2 rounded-xl bg-orange-100">
-            <u-icon name="i-ph-users-four" class=" h-12 w-12 line-clamp-none text-orange-500"/>
-          </div>
-          <div class="text-center text-sm font-medium tracking-tight line-clamp-2">Сообщества</div>
-        </div>
+        </nuxt-link>
       </div>
       <div class="h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10"/>
       <div class="cursor-pointer p-4 rounded-b-xl hover:bg-gray-50 dark:hover:bg-gray-800">

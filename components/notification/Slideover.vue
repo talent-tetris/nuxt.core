@@ -12,15 +12,9 @@ const isOpen = ref(false)
       </template>
     </app-application-bar>
 
-    <div class="space-y-2 p-2 overflow-y-auto bg-gray-50 dark:bg-gray-950">
-      <div class="h-48 rounded-xl bg-red-200/50"></div>
-      <div class="h-48 rounded-xl bg-red-200/50"></div>
-      <div class="h-48 rounded-xl bg-red-200/50"></div>
-      <div class="h-48 rounded-xl bg-red-200/50"></div>
-      <div class="h-48 rounded-xl bg-red-200/50"></div>
-      <div class="h-48 rounded-xl bg-red-200/50"></div>
-      <div class="h-48 rounded-xl bg-red-200/50"></div>
-      <div class="h-48 rounded-xl bg-red-200/50"></div>
+    <div class="h-full flex flex-col justify-center items-center text-center">
+      <div class="font-semibold truncate">Пока что здесь пусто!</div>
+      <div class="text-gray-400 text-sm font-normal  w-1/2">Здесь вы будете получать важные для вас уведомления</div>
     </div>
   </u-slideover>
 </template>

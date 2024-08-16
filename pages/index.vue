@@ -9,8 +9,6 @@
       <div class="text-lg font-bold">Главная</div>
     </template>
     <template #right>
-      <u-button size="lg" color="gray" variant="ghost" icon="i-ph-plus-circle-bold"/>
-      <u-button size="lg" color="gray" variant="ghost" icon="i-ph-magnifying-glass-bold"/>
       <notification-slideover/>
     </template>
   </app-application-bar>
