@@ -6,7 +6,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="space-y-2 p-2 max-w-3xl mx-auto">
+  <div class="space-y-2 py-2 px-2 md:px-0 max-w-3xl mx-auto">
     <div v-if="users" v-for="user in users.users">
       <div class="flex items-center p-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
         <u-avatar icon="i-ph-user-bold" class="text-3xl" size="lg"/>

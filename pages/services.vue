@@ -12,7 +12,7 @@
       <u-button size="lg" color="gray" variant="ghost" icon="i-ph-list-bold" to="settings"/>
     </template>
   </app-application-bar>
-  <div class="space-y-2 p-2 max-w-3xl mx-auto">
+  <div class="space-y-2 py-2 px-2 md:px-0 max-w-3xl mx-auto">
     <div class="bg-white dark:bg-gray-900 rounded-xl">
       <div class="grid grid-cols-4 gap-4 p-2">
         <nuxt-link to="contacts"
@@ -34,20 +34,6 @@
         </div>
       </div>
     </div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
-    <div class="h-48 rounded-xl bg-green-200/50"></div>
   </div>
 </template>
 

@@ -9,7 +9,7 @@ definePageMeta({layout: 'guest'})
       <div class="text-lg font-bold">Внешний вид</div>
     </template>
   </app-application-bar>
-  <div class="max-w-3xl mx-auto space-y-2 p-2">
+  <div class="max-w-3xl mx-auto space-y-2 py-2 px-2 md:px-0">
     <div class="bg-white dark:bg-gray-900 rounded-md">
       <div class="px-3.5 py-2 font-semibold">Цветовая тема</div>
       <div class="space-y-2">
