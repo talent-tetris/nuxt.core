@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: {enabled: true},
   modules: ['@nuxt/ui', 'dayjs-nuxt', '@pinia/nuxt'],
   app: {
-    head: {bodyAttrs: {class: 'bg-gray-50 dark:bg-gray-950'}},
+    head: {bodyAttrs: {class: 'bg-gray-50 dark:bg-gray-950 select-none'}},
   },
   ui: {
     global: true,

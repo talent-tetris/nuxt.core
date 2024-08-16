@@ -6,13 +6,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="space-y-2 py-2 px-2 md:px-0 max-w-3xl mx-auto">
+  <div class=" py-2 px-2 md:px-0 max-w-3xl mx-auto">
     <div v-if="users" v-for="user in users.users">
       <div class="flex items-center p-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
-        <u-avatar icon="i-ph-user-bold" class="text-3xl" size="lg"/>
+        <u-avatar :alt="user.name" size="md"/>
         <div class="flex-1 min-w-0 ml-2">
-          <div class="font-semibold truncate">{{ user.name }}</div>
-          <div class="text-gray-400 text-sm font-normal truncate">
+          <div class="text-sm font-semibold truncate">{{ user.name }}</div>
+          <div class="text-gray-500 text-xs font-normal truncate">
             {{ user.email }}
           </div>
         </div>
