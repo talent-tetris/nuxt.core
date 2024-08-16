@@ -16,7 +16,7 @@
     <div class="bg-white dark:bg-gray-900 rounded-xl">
       <div class="grid grid-cols-4 gap-4 p-2">
         <nuxt-link to="contacts"
-          class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
+                   class="cursor-pointer flex flex-col items-center gap-y-1 p-1.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
           <div class="p-2 rounded-xl bg-red-200/90">
             <u-icon name="i-ph-users" class=" h-12 w-12 line-clamp-none text-red-500"/>
           </div>

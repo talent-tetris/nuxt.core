@@ -3,11 +3,11 @@
   <div class="grid grid-cols-5 gap-2  px-2">
     <AppearanceColorPickerPill v-for="color in primaryColors" :key="color.value" :color="color" :selected="primary"
                                @select="primary = color"/>
-    </div>
-<!--  <div class="grid grid-cols-5 gap-px">-->
-<!--    <AppearanceColorPickerPill v-for="color in primaryColors" :key="color.value" :color="color" :selected="primary"-->
-<!--                               @select="primary = color"/>-->
-<!--  </div>-->
+  </div>
+  <!--  <div class="grid grid-cols-5 gap-px">-->
+  <!--    <AppearanceColorPickerPill v-for="color in primaryColors" :key="color.value" :color="color" :selected="primary"-->
+  <!--                               @select="primary = color"/>-->
+  <!--  </div>-->
 </template>
 
 <script setup lang="ts">

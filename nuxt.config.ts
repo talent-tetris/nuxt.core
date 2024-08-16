@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: {enabled: true},
-  modules: ['@nuxt/ui', 'dayjs-nuxt','@pinia/nuxt'],
+  modules: ['@nuxt/ui', 'dayjs-nuxt', '@pinia/nuxt'],
   app: {
     head: {bodyAttrs: {class: 'bg-gray-50 dark:bg-gray-950'}},
   },
@@ -26,7 +26,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBase:  process.env.BASE_URL || 'https://dev-employee.buhe.su',
+      apiBase: process.env.BASE_URL || 'https://dev-employee.buhe.su',
       apiPrefix: '/api',
     },
   },
