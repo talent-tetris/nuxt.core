@@ -24,7 +24,7 @@ const readMoreActivated = ref(false);
     </div>
     <div v-if="props.post_data.images" class="mt-2 flex flex-col">
       <div class="flex flex-row flex-wrap gap-0.5">
-        <div v-for="image in props.post_data.images" class="relative border-box overflow-hidden flex flex-auto items-center w-52 h-52">
+        <div v-for="image in props.post_data.images" class="relative border-box overflow-hidden flex flex-auto items-center size-32 sm:size-40 md:size-48 lg:size-52">
           <img class="rounded absolute w-full h-full left-0 right-0 top-0 bottom-0 object-cover"
                :src="image.path">
         </div>
