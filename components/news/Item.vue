@@ -17,24 +17,16 @@ const readMoreActivated = ref(false);
       </div>
     </div>
     <div class="mt-2 text-sm">
-      <span v-if="!readMoreActivated">{{ props.post_data.body.slice(0, 200) }}</span>
+      <span v-if="!readMoreActivated" class="select-text">{{ props.post_data.body.slice(0, 200) }}</span>
       <a v-if="!readMoreActivated" @click="readMoreActivated = !readMoreActivated"
          class="inline-block text-primary-500 px-1 rounded-md hover:bg-primary-200/20">Показать еще</a>
-      <span v-if="readMoreActivated" v-html="props.post_data.body"></span>
+      <span v-if="readMoreActivated" class="select-text" v-html="props.post_data.body"></span>
     </div>
-    <div class="hidden mt-2 flex flex-col">
+    <div v-if="props.post_data.images" class="mt-2 flex flex-col">
       <div class="flex flex-row flex-wrap gap-0.5">
-        <div class="relative border-box overflow-hidden flex flex-auto items-center w-52 h-52">
+        <div v-for="image in props.post_data.images" class="relative border-box overflow-hidden flex flex-auto items-center w-52 h-52">
           <img class="rounded absolute w-full h-full left-0 right-0 top-0 bottom-0 object-cover"
-               src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg">
-        </div>
-        <div class="relative border-box overflow-hidden flex flex-auto items-center w-52 h-52">
-          <img class="rounded absolute w-full h-full left-0 right-0 top-0 bottom-0 object-cover"
-               src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg">
-        </div>
-        <div class="relative border-box overflow-hidden flex flex-auto items-center w-52 h-52">
-          <img class="rounded absolute w-full h-full left-0 right-0 top-0 bottom-0 object-cover"
-               src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg">
+               :src="image.path">
         </div>
       </div>
     </div>

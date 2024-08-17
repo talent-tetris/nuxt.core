@@ -8,7 +8,7 @@ onMounted(() => {
 <template>
   <div class=" py-2 px-2 md:px-0 max-w-3xl mx-auto">
     <div v-if="users" v-for="user in users.users">
-      <div class="flex items-center p-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800">
+      <div class="flex items-center p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">
         <u-avatar :alt="user.name" size="md"/>
         <div class="flex-1 min-w-0 ml-2">
           <div class="text-sm font-semibold truncate">{{ user.name }}</div>
