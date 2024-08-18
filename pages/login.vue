@@ -9,8 +9,8 @@ const form = ref();
 
 
 const state = reactive({
-  email: "",
-  password: "",
+  username: '',
+  password: '',
   remember: false,
 });
 
@@ -52,13 +52,13 @@ onBeforeUnmount(() => window.removeEventListener("message", handleMessage));
       </div>
       <UForm ref="form" :state="state" @submit="onSubmit" class="space-y-4">
 
-        <UFormGroup name="email" required>
+        <UFormGroup name="username" required>
           <u-input
-            type="email"
+            type="text"
             size="xl"
             trailing
             placeholder="Электронная почта"
-            v-model="state.email"
+            v-model="state.username"
             autofocus
           />
         </UFormGroup>

@@ -9,13 +9,13 @@ const readMoreActivated = ref(false);
 
 <template>
   <div class="bg-white dark:bg-gray-900 rounded-xl p-2">
-    <div class="flex items-center">
+    <nuxt-link :to="`id-${props.post_data.user.username}`" class="flex items-center" v-if="props.post_data.user">
       <u-avatar size="md" :alt="props.post_data.user.name"/>
       <div class="flex-1 min-w-0 ml-2">
         <div class="text-sm font-semibold truncate">{{ props.post_data.user.name }}</div>
         <div class="text-gray-500 text-xs font-normal truncate">{{ dayjs(props.post_data.created_at).fromNow() }}</div>
       </div>
-    </div>
+    </nuxt-link>
     <div class="mt-2 text-sm">
       <span v-if="!readMoreActivated" class="select-text">{{ props.post_data.body.slice(0, 200) }}</span>
       <a v-if="!readMoreActivated" @click="readMoreActivated = !readMoreActivated"
