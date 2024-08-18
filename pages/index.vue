@@ -9,6 +9,7 @@
       <div class="text-lg font-bold">Главная</div>
     </template>
     <template #right>
+      <post-slideover/>
       <notification-slideover/>
     </template>
   </app-application-bar>

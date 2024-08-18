@@ -7,6 +7,7 @@
     <slot/>
   </main>
   <app-navigation-bar/>
+  <u-notifications/>
 </template>
 <style scoped>
 
