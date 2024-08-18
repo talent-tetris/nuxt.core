@@ -24,6 +24,12 @@ const auth = useAuthStore();
                   block class="justify-start"/>
       </div>
     </div>
+    <div class="bg-white dark:bg-gray-900 rounded-md">
+      <div class="p-2">
+        <u-button icon="i-ph-chat-teardrop-dots-bold" size="xl" color="gray" variant="ghost" label="Задать вопрос" block class="justify-start"/>
+        <u-button icon="i-ph-question-bold" size="xl" color="gray" variant="ghost" label="Вопросы и ответы" block class="justify-start"/>
+      </div>
+    </div>
   </div>
 </template>
 
