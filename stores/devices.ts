@@ -4,7 +4,7 @@ export const useDevicesStore = defineStore('devices', () => {
 
   const devices = ref([]);
 
-  const {refresh: getDevices} = useFetch<any>('devices', {
+  const {refresh: getDevices, pending} = useFetch<any>('devices', {
     immediate: false,
     onResponse({response}) {
       if (response.status === 200) {
@@ -12,6 +12,5 @@ export const useDevicesStore = defineStore('devices', () => {
       }
     }
   })
-
-  return {devices, getDevices}
+  return {devices, getDevices, pending}
 })

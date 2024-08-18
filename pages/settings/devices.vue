@@ -42,7 +42,7 @@ const menu = (row: any) => [
     </template>
     <template #right>
       <u-button size="lg" color="gray" variant="ghost" icon="i-ph-arrow-clockwise-bold"
-                @click="devices.getDevices()"/>
+                :loading="devices.pending" @click="devices.getDevices()"/>
     </template>
   </app-application-bar>
 
@@ -68,7 +68,6 @@ const menu = (row: any) => [
     <div class="bg-white dark:bg-gray-900 rounded-md">
       <div class="px-3.5 py-2 font-semibold">Активные сеансы</div>
       <div v-for="device in devices?.devices" class="px-2 pb-2">
-
         <UDropdown :items="menu(device)" :ui="{ wrapper: 'flex' }">
           <div class="w-full flex items-center p-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">
             <u-avatar icon="i-ph-devices" class="text-3xl" size="lg"/>
