@@ -130,7 +130,7 @@ onBeforeUnmount(() => window.removeEventListener("message", handleMessage));
                   </div>
                 </div>
               </li>
-              <div class="bg-white dark:bg-gray-800 p-2 rounded-xl space-y-2">
+              <div class="bg-gray-100 dark:bg-gray-800 p-2 rounded-xl space-y-2">
                 <div class="text-sm font-bold">И еще кое-что...</div>
                 <div class="text-sm">
                   Постарайтесь не ломать сайт. Разработчик старается делать удобный инструмент, но если вы нашли какие
@@ -138,7 +138,6 @@ onBeforeUnmount(() => window.removeEventListener("message", handleMessage));
                 </div>
               </div>
             </ul>
-
           </div>
         </u-modal>
       </UForm>

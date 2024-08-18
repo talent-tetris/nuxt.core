@@ -25,9 +25,14 @@ const auth = useAuthStore();
       </div>
     </div>
     <div class="bg-white dark:bg-gray-900 rounded-md">
+      <div class="px-3.5 pt-2 font-semibold">Помощь</div>
       <div class="p-2">
-        <u-button icon="i-ph-chat-teardrop-dots-bold" size="xl" color="gray" variant="ghost" label="Задать вопрос" block class="justify-start"/>
-        <u-button icon="i-ph-question-bold" size="xl" color="gray" variant="ghost" label="Вопросы и ответы" block class="justify-start"/>
+        <u-button to="https://t.me/thatoranzhevyy" target="_blank" icon="i-ph-chat-teardrop-dots-bold" size="xl"
+                  color="gray" variant="ghost" label="Задать вопрос" block class="justify-start"/>
+        <u-button to="/settings/faq" icon="i-ph-question-bold" size="xl" color="gray" variant="ghost" label="Вопросы и ответы" block
+                  class="justify-start"/>
+        <u-button disabled icon="i-ph-info-bold" size="xl" color="gray" variant="ghost" label="О приложении" block
+                  class="justify-start"/>
       </div>
     </div>
   </div>
