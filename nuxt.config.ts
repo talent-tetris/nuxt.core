@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: {enabled: true},
-  modules: ['@nuxt/ui', 'dayjs-nuxt', '@pinia/nuxt'],
+  modules: ['@nuxt/ui', 'dayjs-nuxt', '@pinia/nuxt', "@vite-pwa/nuxt"],
   app: {
     head: {bodyAttrs: {class: 'bg-gray-50 dark:bg-gray-950 select-none'}},
   },
