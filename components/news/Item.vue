@@ -22,7 +22,7 @@ const readMoreActivated = ref(false);
          class="inline-block text-primary-500 px-1 rounded-md hover:bg-primary-200/20">Показать еще</a>
       <span v-if="readMoreActivated" class="select-text" v-html="props.post_data.body"></span>
     </div>
-    <template v-if="props.post_data.images">
+    <template v-if="props.post_data.images.length > 0">
       <div class="flex flex-col">
         <div class="flex flex-row flex-wrap gap-0.5">
           <div v-for="image in props.post_data.images"

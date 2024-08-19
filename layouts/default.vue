@@ -10,6 +10,7 @@
   <app-navigation-bar/>
   <u-notifications/>
 </template>
+
 <style scoped>
 
 </style>
