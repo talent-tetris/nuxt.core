@@ -22,15 +22,17 @@ const readMoreActivated = ref(false);
          class="inline-block text-primary-500 px-1 rounded-md hover:bg-primary-200/20">Показать еще</a>
       <span v-if="readMoreActivated" class="select-text" v-html="props.post_data.body"></span>
     </div>
-    <div v-if="props.post_data.images" class="flex flex-col">
-      <div class="flex flex-row flex-wrap gap-0.5">
-        <div v-for="image in props.post_data.images"
-             class="relative border-box overflow-hidden flex flex-auto items-center size-32 sm:size-40 md:size-48 lg:size-52">
-          <img class="rounded absolute w-full h-full left-0 right-0 top-0 bottom-0 object-cover"
-               :src="image.path">
+    <template v-if="props.post_data.images">
+      <div class="flex flex-col">
+        <div class="flex flex-row flex-wrap gap-0.5">
+          <div v-for="image in props.post_data.images"
+               class="relative border-box overflow-hidden flex flex-auto items-center size-32 sm:size-40 md:size-48 lg:size-52">
+            <img class="rounded absolute w-full h-full left-0 right-0 top-0 bottom-0 object-cover"
+                 :src="image.path">
+          </div>
         </div>
       </div>
-    </div>
+    </template>
   </div>
 </template>
 

@@ -26,8 +26,8 @@ onMounted(() => {
         </div>
       </nuxt-link>
     </div>
-    <div v-if="!users.pending" class="text-gray-500 text-center text-xs font-bold">{{ users.users.length }}
-      пользователей
+    <div v-if="users" class="text-gray-500 text-center text-xs font-bold">
+      {{ users.users.length }} пользователей
     </div>
   </div>
 </template>
