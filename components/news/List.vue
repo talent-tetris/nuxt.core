@@ -6,7 +6,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="max-w-3xl mx-auto py-2 space-y-2">
+  <div class="max-w-3xl mx-auto space-y-2">
     <template v-for="post in news.posts">
       <news-item :post_data="post"/>
     </template>
