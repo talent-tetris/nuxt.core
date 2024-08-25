@@ -32,7 +32,7 @@ export default defineNuxtPlugin({
         ),
         ...(
           auth.logged ? {
-            'Authorization': `Bearer ${auth.token}`
+            'Authorization': `Bearer ${auth.access_token}`
           } : {}
         )
       };
@@ -93,8 +93,8 @@ export default defineNuxtPlugin({
       onResponseError({response}) {
         if (response.status === 401) {
           if (auth.logged) {
-            auth.token = ''
-            auth.user = <User>{}
+            auth.access_token = ''
+            auth.user = {}
           }
 
           if (import.meta.client) {

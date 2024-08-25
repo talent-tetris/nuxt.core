@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({layout: 'guest'})
+definePageMeta({layout: 'none'});
 const items = [{
   label: 'Как я могу опубликовать мем на вашем сайте?',
   defaultOpen: true,

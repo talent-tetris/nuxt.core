@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({layout: 'guest'})
+definePageMeta({layout: 'none'});
 const route = useRoute()
 const user = ref({})
 

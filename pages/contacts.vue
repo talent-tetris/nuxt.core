@@ -6,14 +6,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <app-application-bar>
-    <template #left></template>
-    <template #right>
-      <u-button size="lg" color="gray" variant="ghost" icon="i-ph-arrow-clockwise-bold"
-                :loading="users.pending" @click="users.getUsers()"/>
-    </template>
-  </app-application-bar>
-  <div class="py-2 px-2 md:px-0 max-w-3xl mx-auto">
+  <div class="max-w-3xl mx-auto">
     <div v-if="users" v-for="user in users.users">
       <nuxt-link :to="`id-${user.username}`"
                  class="flex items-center p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">
@@ -26,7 +19,7 @@ onMounted(() => {
         </div>
       </nuxt-link>
     </div>
-    <div v-if="users" class="text-gray-500 text-center text-xs font-bold">
+    <div v-if="users" class="text-gray-500 text-center text-xs font-bold py-2">
       {{ users.users.length }} пользователей
     </div>
   </div>

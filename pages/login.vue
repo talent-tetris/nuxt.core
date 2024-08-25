@@ -1,8 +1,5 @@
 <script setup lang="ts">
-
-definePageMeta({
-  layout: 'guest',
-});
+definePageMeta({layout: 'none'});
 const router = useRouter();
 const auth = useAuthStore();
 const form = ref();
@@ -24,7 +21,8 @@ const {refresh: onSubmit, status: loginStatus} = useFetch<any>("login", {
     if (response?.status === 422) {
       form.value.setErrors(response._data?.errors);
     } else if (response._data?.status) {
-      auth.token = response._data.token;
+      console.log(response._data)
+      auth.access_token = response._data.token.access_token;
       await auth.fetchUser();
       await router.push("/");
     }

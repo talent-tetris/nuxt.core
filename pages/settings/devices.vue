@@ -1,8 +1,5 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: 'guest'
-});
-
+definePageMeta({layout: 'none'});
 const dayjs = useDayjs();
 
 const devices = useDevicesStore();
