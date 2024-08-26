@@ -29,13 +29,12 @@ const items = [{
 </script>
 
 <template>
-
-  <app-application-bar>
+  <application-bar>
     <template #left>
       <u-button size="lg" color="gray" variant="ghost" icon="i-ph-arrow-left-bold" @click="$router.back()"/>
       <div class="text-lg font-bold">Вопросы и ответы</div>
     </template>
-  </app-application-bar>
+  </application-bar>
   <div class="max-w-3xl mx-auto space-y-2 py-2 px-2 md:px-0">
     <UAccordion :items="items" :ui="{ wrapper: 'flex flex-col w-full' }">
       <template #default="{ item, index, open }">

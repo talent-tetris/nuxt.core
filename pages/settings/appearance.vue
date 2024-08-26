@@ -3,12 +3,12 @@ definePageMeta({layout: 'none'});
 </script>
 
 <template>
-  <app-application-bar>
+  <application-bar>
     <template #left>
       <u-button size="lg" color="gray" variant="ghost" icon="i-ph-arrow-left-bold" @click="$router.back()"/>
       <div class="text-lg font-bold">Внешний вид</div>
     </template>
-  </app-application-bar>
+  </application-bar>
   <div class="max-w-3xl mx-auto space-y-2 py-2 px-2 md:px-0">
     <div class="bg-white dark:bg-gray-900 rounded-md">
       <div class="px-3.5 py-2 font-semibold">Цветовая тема</div>

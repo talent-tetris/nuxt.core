@@ -19,7 +19,7 @@ onMounted(() => {
 
 <template>
   <div class="max-w-3xl mx-auto">
-    <app-application-bar>
+    <application-bar>
       <template #left>
         <u-button size="lg" color="gray" variant="ghost" icon="i-ph-arrow-left-bold" @click="$router.back()"/>
         <div class="flex items-center">
@@ -30,11 +30,7 @@ onMounted(() => {
           </div>
         </div>
       </template>
-    </app-application-bar>
-    <div>
-
-    </div>
-
+    </application-bar>
     <div class="max-w-3xl mx-auto py-2 space-y-2">
       <template v-for="post in user.posts">
         <news-item :post_data="post"/>
