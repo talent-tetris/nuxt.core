@@ -12,7 +12,6 @@ definePageMeta({layout: 'none'});
   <div class="max-w-3xl mx-auto space-y-2 py-2 px-2 md:px-0">
     <div class="bg-white dark:bg-gray-900 rounded-md">
       <div class="px-3.5 py-2 font-semibold">Цветовая тема</div>
-      <div class="space-y-2">
         <div class="flex flex-col p-2 space-y-2 bg-primary-200/70">
           <div class="flex justify-center">
             <div class="rounded-xl bg-white dark:bg-primary-400/50 px-4 py-0.5">
@@ -31,7 +30,6 @@ definePageMeta({layout: 'none'});
           <hr class="border-gray-200 dark:border-gray-800 my-2 mx-2">
           <appearance-color-picker/>
         </div>
-      </div>
     </div>
   </div>
 </template>

@@ -1,12 +1,12 @@
 <template>
   <ClientOnly>
-    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 px-2">
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1.5 px-2">
       <div v-for="color in primaryColors" :class="color.value === primary.value ? 'bg-gray-100 dark:bg-gray-800' : ''"
-           class="rounded-md hover:bg-gray-50 dark:hover:bg-gray-800/50 p-1.5"
+           class="rounded-md hover:bg-gray-50 dark:hover:bg-gray-800/50 "
            @click="primary = color">
         <div class="flex gap-2">
           <div class="w-4 rounded-l-md" :style="{ backgroundColor: color.hex }"/>
-          {{ color.value }}
+          <div class="py-0.5">{{ color.value }}</div>
         </div>
       </div>
     </div>

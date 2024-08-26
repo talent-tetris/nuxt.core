@@ -16,7 +16,7 @@ const auth = useAuthStore();
         <u-button to="/settings/appearance" icon="i-ph-palette-bold" size="xl" color="gray" variant="ghost"
                   label="Внешний вид" block
                   class="justify-start"/>
-        <u-button to="/settings/devices" icon="i-ph-devices-bold" size="xl" color="gray" variant="ghost"
+        <u-button disabled icon="i-ph-devices-bold" size="xl" color="gray" variant="ghost"
                   label="Устройства" block
                   class="justify-start"/>
         <hr class="border-gray-200 dark:border-gray-800 my-2 mx-2">
