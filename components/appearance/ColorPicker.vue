@@ -1,12 +1,16 @@
 <template>
-  <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 px-2">
-    <AppearanceColorPickerPill v-for="color in primaryColors" :key="color.value" :color="color" :selected="primary"
-                               @select="primary = color"/>
-  </div>
-  <!--  <div class="grid grid-cols-5 gap-px">-->
-  <!--    <AppearanceColorPickerPill v-for="color in primaryColors" :key="color.value" :color="color" :selected="primary"-->
-  <!--                               @select="primary = color"/>-->
-  <!--  </div>-->
+  <ClientOnly>
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 px-2">
+      <div v-for="color in primaryColors" :class="color.value === primary.value ? 'bg-gray-100 dark:bg-gray-800' : ''"
+           class="rounded-md hover:bg-gray-50 dark:hover:bg-gray-800/50 p-1.5"
+           @click="primary = color">
+        <div class="flex gap-2">
+          <div class="w-4 rounded-l-md" :style="{ backgroundColor: color.hex }"/>
+          {{ color.value }}
+        </div>
+      </div>
+    </div>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">
