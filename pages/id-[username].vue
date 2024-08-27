@@ -8,7 +8,6 @@ const {refresh: getUser} = useFetch<any>('user/' + route.params.username, {
   onResponse({response}) {
     if (response.status === 200) {
       user.value = response._data.user;
-      console.log(response._data.user)
     }
   }
 })
@@ -31,7 +30,7 @@ onMounted(() => {
         </div>
       </template>
     </application-bar>
-    <div class="max-w-3xl mx-auto py-2 space-y-2">
+    <div class="max-w-3xl mx-auto py-2 px-2 md:px-0 space-y-2">
       <template v-for="post in user.posts">
         <news-item :post_data="post"/>
       </template>

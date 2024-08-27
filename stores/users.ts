@@ -8,7 +8,6 @@ export const useUserStore = defineStore('users', () => {
     immediate: false,
     onResponse({response}) {
       if (response.status === 200) {
-        console.log(response._data)
         users.value = response._data.users
       }
     }
