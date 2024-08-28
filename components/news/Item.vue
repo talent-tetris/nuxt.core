@@ -4,7 +4,7 @@ const props = defineProps({
 })
 const dayjs = useDayjs();
 const readMoreActivated = ref(false);
-
+const config = useRuntimeConfig()
 </script>
 
 <template>
@@ -16,7 +16,7 @@ const readMoreActivated = ref(false);
         <div class="text-gray-500 text-xs font-normal truncate">{{ dayjs(props.post_data.created_at).fromNow() }}</div>
       </div>
     </nuxt-link>
-    <div class="text-sm">
+    <div class="text-sm" v-if="props.post_data.body">
       <span v-if="!readMoreActivated" class="select-text">{{ props.post_data.body.slice(0, 200) }}</span>
       <a v-if="!readMoreActivated" @click="readMoreActivated = !readMoreActivated"
          class="inline-block text-primary-500 px-1 rounded-md hover:bg-primary-200/20">Показать еще</a>
@@ -28,7 +28,7 @@ const readMoreActivated = ref(false);
           <div v-for="image in props.post_data.images"
                class="relative border-box overflow-hidden flex flex-auto items-center size-32 sm:size-40 md:size-48 lg:size-52">
             <img class="rounded absolute w-full h-full left-0 right-0 top-0 bottom-0 object-cover"
-                 :src="image.path">
+                 :alt="image.file_name" :src="`${config.public.apiBase}/storage/${image.file_path}/${image.file_name}`">
           </div>
         </div>
       </div>
