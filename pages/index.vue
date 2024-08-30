@@ -12,7 +12,7 @@
       <post-slideover/>
     </template>
   </application-bar>
-  <div class="space-y-2 py-2 px-2 md:px-0 max-w-3xl mx-auto">
+  <div class="max-w-3xl mx-auto">
     <news-list/>
   </div>
 </template>

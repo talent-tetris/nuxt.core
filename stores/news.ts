@@ -4,6 +4,7 @@ export const useNewsStore = defineStore('news', () => {
   const page = ref(1);
   const lastPage = ref(1);
   const posts = ref([]);
+  const isLoaded = computed(() => posts.value.length > 0)
   const {refresh: getPosts, pending} = useFetch('posts', {
     immediate: false,
     params: {page: page},
@@ -31,5 +32,5 @@ export const useNewsStore = defineStore('news', () => {
     posts.value = [];
     getPosts()
   }
-  return {posts, getPosts, pending, loadMore, refreshPosts, page}
+  return {posts, getPosts, pending, loadMore, refreshPosts, page, isLoaded}
 })

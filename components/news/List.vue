@@ -6,7 +6,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="max-w-3xl mx-auto space-y-2">
+  <NewsSkeleton v-if="news.pending && !news.isLoaded"/>
+  <div v-else class="p-2 md:px-0 space-y-2">
     <template v-for="post in news.posts">
       <news-item :post_data="post"/>
     </template>

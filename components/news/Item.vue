@@ -17,10 +17,15 @@ const config = useRuntimeConfig()
       </div>
     </nuxt-link>
     <div class="text-sm" v-if="props.post_data.body">
-      <span v-if="!readMoreActivated" class="select-text">{{ props.post_data.body.slice(0, 200) }}</span>
-      <a v-if="!readMoreActivated" @click="readMoreActivated = !readMoreActivated"
-         class="inline-block text-primary-500 px-1 rounded-md hover:bg-primary-200/20">Показать еще</a>
-      <span v-if="readMoreActivated" class="select-text" v-html="props.post_data.body"></span>
+      <template v-if="props.post_data.body.length>200">
+        <span v-if="!readMoreActivated" class="select-text">{{ props.post_data.body.slice(0, 200) }}</span>
+        <a v-if="!readMoreActivated" @click="readMoreActivated = !readMoreActivated"
+           class="inline-block text-primary-500 px-1 rounded-md hover:bg-primary-200/20">Показать еще</a>
+        <span v-if="readMoreActivated" class="select-text" v-html="props.post_data.body"></span>
+      </template>
+      <div v-else class="select-text">
+        {{ props.post_data.body }}
+      </div>
     </div>
     <template v-if="props.post_data.images.length > 0">
       <div class="flex flex-col">
