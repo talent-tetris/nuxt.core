@@ -3,7 +3,7 @@ const isOpen = ref(false)
 const news = useNewsStore();
 const state = reactive({
   body: '',
-  files: [],
+  images: [],
 });
 const {refresh: onSubmit, status: loginStatus} = useFetch<any>("posts", {
   method: "POST",
@@ -16,7 +16,7 @@ const {refresh: onSubmit, status: loginStatus} = useFetch<any>("posts", {
       useToast().add({title: "Пост успешно опубликованно!"})
       isOpen.value = false
       state.body = ''
-      state.files = []
+      state.images = []
     }
     console.log(response._data)
   }
@@ -48,8 +48,8 @@ const {refresh: onSubmit, status: loginStatus} = useFetch<any>("posts", {
         :ui="{wrapper:'h-full',base:'h-full',size:{xl:'text-xl'}}"
         class="w-full text-xl"
       />
-      <div class="hidden">
-        <UInput v-model="state.files" type="file" size="sm" icon="i-heroicons-folder"/>
+      <div>
+        <PostUploadImage v-model="state.images"/>
       </div>
     </div>
   </u-slideover>
