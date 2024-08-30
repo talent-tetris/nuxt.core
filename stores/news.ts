@@ -25,5 +25,11 @@ export const useNewsStore = defineStore('news', () => {
       getPosts();
     }
   }
-  return {posts, getPosts, pending, loadMore, page}
+  const refreshPosts = () => {
+    page.value = 1;
+    lastPage.value = 1;
+    posts.value = [];
+    getPosts()
+  }
+  return {posts, getPosts, pending, loadMore, refreshPosts, page}
 })
