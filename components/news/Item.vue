@@ -16,7 +16,7 @@ const config = useRuntimeConfig()
         <div class="text-gray-500 text-xs font-normal truncate">{{ dayjs(props.post_data.created_at).fromNow() }}</div>
       </div>
     </nuxt-link>
-    <div class="text-sm" v-if="props.post_data.body">
+    <div class="text-sm whitespace-pre-wrap" v-if="props.post_data.body">
       <template v-if="props.post_data.body.length>200">
         <span v-if="!readMoreActivated" class="select-text">{{ props.post_data.body.slice(0, 200) }}</span>
         <a v-if="!readMoreActivated" @click="readMoreActivated = !readMoreActivated"

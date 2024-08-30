@@ -32,7 +32,8 @@ onMounted(() => {
         </template>
       </application-bar>
       <div class="max-w-3xl mx-auto py-2 px-2 md:px-0 space-y-2">
-        <div v-if="user.posts.length <= 0" class="bg-white h-20 dark:bg-gray-900 rounded-xl p-2 items-center justify-center flex">
+        <div v-if="user.posts.length <= 0"
+             class="bg-white h-20 dark:bg-gray-900 rounded-xl p-2 items-center justify-center flex">
           <div class="text-sm text-gray-500">
             На стене пока нет ни одной записи.
           </div>
