@@ -33,6 +33,7 @@ const {refresh: onSubmit, status: loginStatus} = useFetch<any>("posts", {
       </template>
       <template #right>
         <u-button size="lg" color="gray" variant="ghost" label="Опубликовать"
+                  :disabled="state.body.length <= 0"
                   @click="onSubmit()"/>
       </template>
     </application-bar>
