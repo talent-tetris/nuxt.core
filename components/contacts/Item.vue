@@ -10,7 +10,7 @@ const auth = useAuthStore();
     <div class="flex-1 min-w-0 ml-2">
       <div class="text-sm font-semibold truncate">{{ props.user.name }}</div>
       <div v-if="auth.user.id !== props.user.id" class="text-gray-500 text-xs font-normal truncate">
-        {{ props.user.email }}
+        {{ props.user.email || '@' + props.user.username }}
       </div>
       <div v-else class="text-primary-500 text-xs font-normal truncate">
         Это вы :)
