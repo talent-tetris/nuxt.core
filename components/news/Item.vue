@@ -28,15 +28,7 @@ const config = useRuntimeConfig()
       </div>
     </div>
     <template v-if="props.post_data.images.length > 0">
-      <div class="flex flex-col">
-        <div class="flex flex-row flex-wrap gap-0.5">
-          <div v-for="image in props.post_data.images"
-               class="relative border-box overflow-hidden flex flex-auto items-center size-32 sm:size-40 md:size-48 lg:size-52">
-            <img class="rounded absolute w-full h-full left-0 right-0 top-0 bottom-0 object-cover"
-                 :alt="image.file_name" :src="`${config.public.apiBase}/storage/${image.file_path}/${image.file_name}`">
-          </div>
-        </div>
-      </div>
+      <NewsImages :images="props.post_data.images" :galleryID="props.post_data.id"/>
     </template>
   </div>
 </template>
