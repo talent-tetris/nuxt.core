@@ -32,5 +32,10 @@ export const useNewsStore = defineStore('news', () => {
     posts.value = [];
     getPosts()
   }
-  return {posts, getPosts, pending, loadMore, refreshPosts, page, isLoaded}
+  const clearPosts = () => {
+    page.value = 1;
+    lastPage.value = 1;
+    posts.value = [];
+  }
+  return {posts, getPosts, pending, loadMore, refreshPosts, clearPosts, page, isLoaded}
 })

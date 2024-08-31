@@ -3,6 +3,9 @@ const news = useNewsStore();
 onMounted(() => {
   news.getPosts()
 })
+onBeforeUnmount(() => {
+  news.clearPosts()
+})
 </script>
 
 <template>
