@@ -48,7 +48,7 @@ const {refresh: onSubmit, status: loginStatus} = useFetch<any>("posts", {
         :ui="{wrapper:'h-full',base:'h-full',size:{xl:'text-xl'}}"
         class="w-full text-xl"
       />
-      <div>
+      <div class="hidden">
         <PostUploadImage v-model="state.images"/>
       </div>
     </div>
