@@ -4,7 +4,6 @@ const props = defineProps({
 })
 const dayjs = useDayjs();
 const readMoreActivated = ref(false);
-const config = useRuntimeConfig()
 </script>
 
 <template>

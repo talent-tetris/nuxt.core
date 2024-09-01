@@ -10,6 +10,7 @@
     </template>
     <template #right>
       <post-slideover/>
+      <u-button size="lg" color="gray" variant="ghost" icon="i-ph-list-bold" to="settings"/>
     </template>
   </application-bar>
   <div class="max-w-3xl mx-auto">

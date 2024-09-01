@@ -5,22 +5,30 @@ const state = reactive({
   body: '',
   images: [],
 });
-const {refresh: onSubmit, status: loginStatus} = useFetch<any>("posts", {
-  method: "POST",
-  body: state,
-  immediate: false,
-  watch: false,
-  async onResponse({response}) {
-    if (response._data?.status) {
-      news.refreshPosts()
-      useToast().add({title: "Пост успешно опубликованно!"})
-      isOpen.value = false
-      state.body = ''
-      state.images = []
+
+function onSubmit() {
+  const formData = new FormData();
+  state.images.forEach(file => {
+    formData.append('images[]', file);
+  });
+  useFetch('posts', {
+    method: 'POST',
+    body: formData,
+    params: {
+      body: state.body,
+    },
+    async onResponse({response}) {
+      if (response._data?.status) {
+        news.refreshPosts()
+        useToast().add({title: "Пост успешно опубликованно!"})
+        isOpen.value = false
+        state.body = ''
+        state.images = []
+      }
     }
-    console.log(response._data)
-  }
-});
+  });
+}
+
 
 </script>
 
@@ -48,7 +56,7 @@ const {refresh: onSubmit, status: loginStatus} = useFetch<any>("posts", {
         :ui="{wrapper:'h-full',base:'h-full',size:{xl:'text-xl'}}"
         class="w-full text-xl"
       />
-      <div class="hidden">
+      <div>
         <PostUploadImage v-model="state.images"/>
       </div>
     </div>
