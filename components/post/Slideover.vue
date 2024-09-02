@@ -1,5 +1,13 @@
 <script setup lang="ts">
 const isOpen = ref(false)
+onBeforeRouteLeave((to, from, next) => {
+  if (isOpen.value) {
+    next(false);
+    isOpen.value = false;
+  } else {
+    next();
+  }
+})
 const news = useNewsStore();
 const state = reactive({
   body: '',
@@ -29,11 +37,10 @@ function onSubmit() {
   });
 }
 
-
 </script>
 
 <template>
-  <u-button size="lg" color="gray" variant="ghost" icon="i-ph-plus-circle-bold" @click="isOpen = true"/>
+  <u-button size="lg" color="gray" variant="ghost" icon="i-ph-plus-circle-bold" @click="isOpen = true; isOpened()"/>
   <u-slideover v-model="isOpen">
     <application-bar>
       <template #left>
