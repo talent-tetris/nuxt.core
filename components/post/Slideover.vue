@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const isOpen = ref(false)
+
+import {useTextareaAutosize} from '@vueuse/core'
+
+const {textarea} = useTextareaAutosize()
+
 onBeforeRouteLeave((to, from, next) => {
   if (isOpen.value) {
     next(false);
@@ -53,15 +58,12 @@ function onSubmit() {
       </template>
     </application-bar>
     <hr class="border-gray-200 dark:border-gray-800 mx-2">
-    <div class="h-full flex flex-col p-4 gap-2">
-      <UTextarea
+    <div class=" h-[calc(100%-3.5rem)] flex flex-col p-4 gap-2">
+      <textarea
+        class="relative block w-full disabled:cursor-not-allowed focus:outline-none border-0 form-textarea rounded-md placeholder-gray-400 dark:placeholder-gray-500 text-xl p-0 bg-transparent focus:ring-0 focus:shadow-none resize-none"
+        ref="textarea"
         v-model="state.body"
-        :padded="false"
         placeholder="Что интересного расскажете?"
-        variant="none"
-        size="xl"
-        :ui="{wrapper:'h-full',base:'h-full',size:{xl:'text-xl'}}"
-        class="w-full text-xl"
       />
       <div>
         <PostUploadImage v-model="state.images"/>

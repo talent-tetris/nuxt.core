@@ -40,7 +40,6 @@ export default {
 
 <template>
   <div :id="'post_'+galleryID" class="flex flex-row flex-wrap gap-0.5">
-    {{}}
     <a v-for="(image, key) in imagesData"
        :key="key"
        :href="`${config.public.apiBase}/storage/${image.file_path}/${image.file_name}`"
