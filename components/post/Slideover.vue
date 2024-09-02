@@ -54,7 +54,7 @@ function onSubmit() {
       <template #right>
         <u-button size="lg" color="gray" variant="ghost" label="Опубликовать"
                   :disabled="state.body.length <= 0"
-                  @click.stop="onSubmit()"/>
+                  @click.once="onSubmit()"/>
       </template>
     </application-bar>
     <hr class="border-gray-200 dark:border-gray-800 mx-2">
