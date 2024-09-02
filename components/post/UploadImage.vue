@@ -53,7 +53,7 @@ const uploadImage = (files) => {
 
     </div>
     <UButton onclick="document.getElementById('fileInput').click()" color="gray" variant="solid"
-             icon="i-ph-folder" size="xs"/>
+             icon="i-ph-images" size="xs"/>
     <UInput id="fileInput" type="file" accept="image/jpeg" class="hidden" @change="uploadImage" multiple/>
   </div>
 </template>
