@@ -39,7 +39,7 @@ onMounted(() => {
           </div>
         </div>
         <template v-for="post in user.posts">
-          <news-item :post_data="post"/>
+          <news-item :post_data="post" :userData="user"/>
         </template>
       </div>
     </template>
