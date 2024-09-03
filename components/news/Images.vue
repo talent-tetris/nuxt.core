@@ -39,7 +39,7 @@ export default {
 </script>
 
 <template>
-  <div :id="'post_'+galleryID" class="flex flex-row flex-wrap gap-0.5">
+  <div :id="'post_'+galleryID" class="flex flex-row flex-wrap gap-0.5 ">
     <a v-for="(image, key) in imagesData"
        :key="key"
        :href="`${config.public.apiBase}/storage/${image.file_path}/${image.file_name}`"
@@ -47,7 +47,7 @@ export default {
        :data-pswp-height="image.height"
        target="_blank"
        rel="noreferrer"
-       class="relative border-box overflow-hidden flex flex-auto items-center size-32 sm:size-40 md:size-48 lg:size-52">
+       class="relative border-box overflow-hidden flex flex-auto items-center h-96 w-48 sm:w-40 md:w-48 lg:w-52">
       <img class="rounded absolute w-full h-full left-0 right-0 top-0 bottom-0 object-cover"
            :src="`${config.public.apiBase}/storage/${image.file_path}/${image.file_name}`">
     </a>
