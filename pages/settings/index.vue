@@ -17,6 +17,8 @@ const auth = useAuthStore();
                   label="Внешний вид" block class="justify-start"/>
         <u-button disabled icon="i-ph-devices-bold" size="xl" color="gray" variant="ghost"
                   label="Устройства" block class="justify-start"/>
+        <u-button to="/change-password" icon="i-ph-password-bold" size="xl" color="gray" variant="ghost"
+                  label="Сменить пароль" block class="justify-start"/>
         <hr class="border-gray-200 dark:border-gray-800 my-2 mx-2">
         <u-button @click="auth.logout" icon="i-ph-sign-out-bold" size="xl" color="primary" variant="ghost"
                   label="Выйти" block class="justify-start"/>
