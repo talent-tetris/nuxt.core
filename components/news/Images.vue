@@ -1,45 +1,38 @@
-<script>
+<script setup lang="ts">
+const props = defineProps({
+  galleryID: {},
+  imagesData: {},
+});
+const config = useRuntimeConfig()
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
 
-export default {
-  name: 'SimpleGallery',
-  props: {
-    galleryID: String,
-    images: Array,
-  },
-  setup(props) {
-    const config = useRuntimeConfig()
-    return {
-      config: config,
-      imagesData: props.images,
-    };
-  },
-  mounted() {
-    if (!this.lightbox) {
-      this.lightbox = new PhotoSwipeLightbox({
-        gallery: '#' + 'post_' + this.$props.galleryID,
-        children: 'a',
-        zoom: false,
-        loop: false,
-        bgOpacity: 1,
-        pswpModule: () => import('photoswipe'),
-      });
-      this.lightbox.init();
-    }
-  },
-  unmounted() {
-    if (this.lightbox) {
-      this.lightbox.destroy();
-      this.lightbox = null;
-    }
-  },
-  methods: {},
-};
+let lightbox = null;
+onMounted(() => {
+  if (!lightbox) {
+    lightbox = new PhotoSwipeLightbox({
+      gallery: '#' + 'post_' + props.galleryID,
+      children: 'a',
+      zoom: false,
+      loop: false,
+      bgOpacity: 1,
+      pswpModule: () => import('photoswipe'),
+    });
+    lightbox.init();
+  }
+});
+
+onUnmounted(() => {
+  if (lightbox) {
+    lightbox.destroy();
+    lightbox = null;
+  }
+});
+
 </script>
 
 <template>
-  <div :id="'post_'+galleryID" class="flex flex-row flex-wrap gap-0.5 ">
+  <div :id="`post_${props.galleryID}`" class="flex flex-row flex-wrap gap-0.5 ">
     <a v-for="(image, key) in imagesData"
        :key="key"
        :href="`${config.public.apiBase}/storage/${image.file_path}/${image.file_name}`"
@@ -54,6 +47,5 @@ export default {
   </div>
 </template>
 
-<style scoped>
+<style scoped></style>
 
-</style>

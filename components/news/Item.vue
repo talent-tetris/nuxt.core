@@ -29,8 +29,12 @@ const readMoreActivated = ref(false);
       </div>
     </div>
     <template v-if="props.post_data.images.length > 0">
-      <NewsImages :images="props.post_data.images" :galleryID="props.post_data.id"/>
+      <NewsImages :imagesData="props.post_data.images" :galleryID="props.post_data.id"/>
     </template>
+    <div class="hidden">
+      <u-button size="xs" color="gray" variant="ghost" icon="i-ph-heart-bold" label="233"/>
+      <u-button size="xs" color="gray" variant="ghost" icon="i-ph-chat-circle-bold" label="233"/>
+    </div>
   </div>
 </template>
 

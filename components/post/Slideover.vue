@@ -45,7 +45,7 @@ function onSubmit() {
 </script>
 
 <template>
-  <u-button size="lg" color="gray" variant="ghost" icon="i-ph-plus-circle-bold" @click="isOpen = true; isOpened()"/>
+  <u-button size="lg" color="gray" variant="ghost" icon="i-ph-plus-circle-bold" @click="isOpen = true;"/>
   <u-slideover v-model="isOpen">
     <application-bar>
       <template #left>
