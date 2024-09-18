@@ -5,20 +5,20 @@ export const useAuthStore = defineStore('auth', () => {
   const nuxtApp = useNuxtApp()
 
   const user = ref({});
-  const access_token = useCookie('access_token', {
+  const token = useCookie('token', {
     path: '/',
     sameSite: 'strict',
     secure: config.public.apiBase.startsWith('https://'),
     maxAge: 60 * 60 * 24 * 365
   })
-  const logged = computed(() => !!access_token.value)
+  const logged = computed(() => !!token.value)
 
   const {refresh: logout} = useFetch<any>('logout', {
     method: 'POST',
     immediate: false,
     onResponse({response}) {
       if (response.status === 200) {
-        access_token.value = ''
+        token.value = ''
         user.value = {}
 
         nuxtApp.runWithContext(() => {
@@ -37,5 +37,5 @@ export const useAuthStore = defineStore('auth', () => {
     }
   })
 
-  return {user, logged, logout, fetchUser, access_token}
+  return {user, logged, logout, fetchUser, token}
 })

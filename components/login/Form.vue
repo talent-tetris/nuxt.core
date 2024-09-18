@@ -9,8 +9,8 @@ const state = reactive({
   remember: false,
 });
 
-const {refresh: onSubmit, status: loginStatus} = useFetch<any>("login", {
-  method: "POST",
+const {refresh: onSubmit, status: loginStatus} = useFetch<any>('login', {
+  method: 'POST',
   body: state,
   immediate: false,
   watch: false,
@@ -18,8 +18,7 @@ const {refresh: onSubmit, status: loginStatus} = useFetch<any>("login", {
     if (response?.status === 422) {
       form.value.setErrors(response._data?.errors);
     } else if (response._data?.status) {
-      console.log(response._data)
-      auth.access_token = response._data.token.access_token;
+      auth.token = response._data.token;
       await auth.fetchUser();
       await router.push("/");
     }

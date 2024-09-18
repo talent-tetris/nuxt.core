@@ -32,16 +32,15 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div :id="`post_${props.galleryID}`" class="flex flex-row flex-wrap gap-0.5 ">
+  <div :id="`post_${props.galleryID}`" class="max-w-full whitespace-nowrap overflow-x-auto flex space-x-2">
     <a v-for="(image, key) in imagesData"
        :key="key"
        :href="`${config.public.apiBase}/storage/${image.file_path}/${image.file_name}`"
        :data-pswp-width="image.width"
        :data-pswp-height="image.height"
        target="_blank"
-       rel="noreferrer"
-       class="relative border-box overflow-hidden flex flex-auto items-center h-96 w-48 sm:w-40 md:w-48 lg:w-52">
-      <img class="rounded absolute w-full h-full left-0 right-0 top-0 bottom-0 object-cover"
+       rel="noreferrer">
+      <img class="rounded h-full max-w-full"
            :src="`${config.public.apiBase}/storage/${image.file_path}/${image.file_name}`">
     </a>
   </div>
