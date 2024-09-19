@@ -40,7 +40,7 @@ onUnmounted(() => {
        target="_blank"
        rel="noreferrer">
       <img class="rounded"
-           :class="imagesData.length <= 1? 'max-w-full' : 'max-w-7xl h-96'"
+           :class="imagesData.length <= 1? 'max-w-full' : 'max-w-7xl h-44'"
            :src="image.image_url" :alt="image.asset_id">
     </a>
   </div>
