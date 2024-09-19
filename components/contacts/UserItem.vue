@@ -5,7 +5,7 @@ const auth = useAuthStore();
 
 <template>
   <nuxt-link :to="`id-${props.user.username}`"
-             class="flex items-center p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800">
+             class="flex items-center p-2 rounded-xl hover:bg-white dark:hover:bg-gray-800">
     <u-avatar :alt="props.user.name ?? props.user.username" size="md"/>
     <div class="flex-1 min-w-0 ml-2">
       <div class="text-sm font-semibold truncate">{{ props.user.name ?? props.user.username }}</div>
