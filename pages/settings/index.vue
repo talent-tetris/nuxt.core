@@ -15,7 +15,7 @@ const auth = useAuthStore();
       <div class="p-2">
         <u-button to="/settings/appearance" icon="i-ph-palette-bold" size="xl" color="gray" variant="ghost"
                   label="Внешний вид" block class="justify-start"/>
-        <u-button disabled icon="i-ph-devices-bold" size="xl" color="gray" variant="ghost"
+        <u-button to="/settings/devices" icon="i-ph-devices-bold" size="xl" color="gray" variant="ghost"
                   label="Устройства" block class="justify-start"/>
         <u-button to="/change-password" icon="i-ph-password-bold" size="xl" color="gray" variant="ghost"
                   label="Сменить пароль" block class="justify-start"/>
