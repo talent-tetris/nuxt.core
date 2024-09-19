@@ -40,7 +40,8 @@ onUnmounted(() => {
        :data-pswp-height="image.height"
        target="_blank"
        rel="noreferrer">
-      <img class="rounded max-h-96 max-w-7xl min-w-full"
+      <img class="rounded"
+           :class="imagesData.length <= 1? 'max-w-full' : 'max-w-7xl h-96'"
            :src="`${config.public.apiBase}/storage/${image.file_path}/${image.file_name}`">
     </a>
   </div>
