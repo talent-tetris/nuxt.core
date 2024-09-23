@@ -1,16 +1,10 @@
-<script setup lang="ts">
-import {useDevicesStore} from "~/stores/devices";
-
-definePageMeta({
-  layout: 'none'
-});
-
+<script lang="ts" setup>
+definePageMeta({layout: 'none'});
+useSeoMeta({title: 'Устройства'})
 const dayjs = useDayjs();
 
-const devices = useDevicesStore();
-onMounted(() => {
-  devices.getDevices()
-})
+const {data, status, refresh} = useFetch<any>("devices");
+const loading = computed(() => status.value === 'pending');
 
 const menu = (row: any) => [
   [
@@ -25,7 +19,7 @@ const menu = (row: any) => [
           },
           async onResponse({response}) {
             if (response._data?.status) {
-              devices.getDevices()
+              refresh()
             }
           }
         });
@@ -33,9 +27,7 @@ const menu = (row: any) => [
     },
   ],
 ];
-
 </script>
-
 <template>
   <application-bar>
     <template #left>
@@ -44,17 +36,17 @@ const menu = (row: any) => [
     </template>
     <template #right>
       <u-button size="lg" color="gray" variant="ghost" icon="i-ph-arrow-clockwise-bold"
-                @click="devices.getDevices()"/>
+                @click="refresh"/>
     </template>
   </application-bar>
 
   <div class="max-w-3xl mx-auto space-y-2 py-2 px-2 md:px-0">
-    <div class="bg-white dark:bg-gray-900 rounded-md">
+    <div v-if="data?.devices" class="bg-white dark:bg-gray-900 rounded-md">
       <div class="px-3.5 py-2 font-semibold">Это устройство</div>
-      <template v-for="device in devices?.devices">
+      <template v-for="device in data?.devices">
         <div class="px-2 pb-2" v-if="device.is_current">
-          <div class="flex items-center p-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">
-            <u-avatar icon="i-ph-devices" class="bg-primary-300 text-3xl" size="lg"/>
+          <div class="flex items-center p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">
+            <u-avatar icon="i-ph-devices" class="text-3xl" size="lg"/>
             <div class="flex-1 min-w-0 ml-2">
               <div class="font-semibold truncate">
                 {{ device.name }}
@@ -67,13 +59,13 @@ const menu = (row: any) => [
         </div>
       </template>
     </div>
-    <div class="bg-white dark:bg-gray-900 rounded-md">
+    <div v-if="data?.devices" class="bg-white dark:bg-gray-900 rounded-md">
       <div class="px-3.5 py-2 font-semibold">Активные сеансы</div>
-      <div v-for="device in devices?.devices" class="px-2 pb-2">
-
-        <UDropdown :items="menu(device)" :ui="{ wrapper: 'flex' }">
-          <div class="w-full flex items-center p-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">
-            <u-avatar icon="i-ph-devices" class="bg-primary-300 text-3xl" size="lg"/>
+      <template v-for="device in data?.devices">
+        <div class="px-2 pb-2">
+          <UDropdown UDropdown :items="menu(device)" :ui="{ wrapper: 'flex' }"
+                     class="flex items-center p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">
+            <u-avatar icon="i-ph-devices" class="text-3xl" size="lg"/>
             <div class="flex-1 min-w-0 ml-2">
               <div class="font-semibold truncate">
                 {{ device.name }}
@@ -82,13 +74,9 @@ const menu = (row: any) => [
                 {{ device.ip }} : <span class="text-primary-500">{{ dayjs(device.last_used_at).fromNow() }}</span>
               </div>
             </div>
-          </div>
-        </UDropdown>
-      </div>
+          </UDropdown>
+        </div>
+      </template>
     </div>
   </div>
 </template>
-
-<style scoped>
-
-</style>

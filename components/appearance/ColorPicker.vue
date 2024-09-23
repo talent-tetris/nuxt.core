@@ -3,7 +3,7 @@
     <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1.5 px-2">
       <div v-for="color in primaryColors"
            :class="{'bg-gray-100 dark:bg-gray-800':color.value === primary.value}"
-           class="rounded-md hover:bg-gray-50 dark:hover:bg-gray-800/50"
+           class="rounded-md hover:bg-gray-100 dark:hover:bg-gray-800/50 cursor-pointer"
            @click="primary = color">
         <div class="flex gap-2">
           <div class="w-4 rounded-l-md" :style="{ backgroundColor: color.hex }"/>

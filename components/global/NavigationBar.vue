@@ -6,7 +6,7 @@
   <div class="fixed bottom-0 left-0 right-0 z-50 w-full bg-white dark:bg-gray-900">
     <div class="grid grid-cols-3 max-w-3xl mx-auto h-14">
       <nuxt-link
-        class="inline-flex flex-col items-center justify-center px-5 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 group"
+        class="inline-flex flex-col items-center justify-center px-5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 group"
         to="/">
         <u-icon
           class="w-8 h-8 text-gray-500 dark:text-gray-500 group-hover:text-primary-600 dark:group-hover:text-primary-600"
@@ -15,7 +15,7 @@
           class="text-xs text-gray-500 dark:text-gray-500 group-hover:text-primary-600 dark:group-hover:text-primary-600">Новости</span>
       </nuxt-link>
       <nuxt-link
-        class="inline-flex flex-col items-center justify-center px-5 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 group"
+        class="inline-flex flex-col items-center justify-center px-5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 group"
         to="/artstation">
         <u-icon
           class="w-8 h-8 text-gray-500 dark:text-gray-500 group-hover:text-primary-600 dark:group-hover:text-primary-600"
@@ -24,7 +24,7 @@
           class="text-xs text-gray-500 dark:text-gray-500 group-hover:text-primary-600 dark:group-hover:text-primary-600">Каеффф</span>
       </nuxt-link>
       <nuxt-link
-        class="inline-flex flex-col items-center justify-center px-5 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 group"
+        class="inline-flex flex-col items-center justify-center px-5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 group"
         to="/contacts">
         <u-icon
           class="w-8 h-8 text-gray-500 dark:text-gray-500 group-hover:text-primary-600 dark:group-hover:text-primary-600"
