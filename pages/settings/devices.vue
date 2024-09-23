@@ -3,8 +3,10 @@ definePageMeta({layout: 'none'});
 useSeoMeta({title: 'Устройства'})
 const dayjs = useDayjs();
 
-const {data, status, refresh} = useFetch<any>("devices");
-const loading = computed(() => status.value === 'pending');
+const data = useDevicesStore();
+onMounted(() => {
+  data.getDevices()
+})
 
 const menu = (row: any) => [
   [
@@ -19,7 +21,7 @@ const menu = (row: any) => [
           },
           async onResponse({response}) {
             if (response._data?.status) {
-              refresh()
+              data.getDevices()
             }
           }
         });
@@ -36,7 +38,7 @@ const menu = (row: any) => [
     </template>
     <template #right>
       <u-button size="lg" color="gray" variant="ghost" icon="i-ph-arrow-clockwise-bold"
-                @click="refresh"/>
+                @click="data.getDevices()"/>
     </template>
   </application-bar>
 
